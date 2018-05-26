@@ -60,10 +60,6 @@ class UsersController extends Controller
        // return redirect()->route('users.show', [$user->id]);//等同$user
        //   }
 
-
-
-
-
          public function edit(User $user)
              {
                 $this->authorize('update', $user);
@@ -101,12 +97,12 @@ class UsersController extends Controller
     {
         $view = 'emails.confirm';
         $data = compact('user');
-        $from = 'aufree@yousails.com';
-        $name = 'Aufree';
+        // $from = 'aufree@yousails.com';
+        // $name = 'Aufree';
         $to = $user->email;
         $subject = "感谢注册 Sample 应用！请确认你的邮箱。";
 
-        Mail::send($view, $data, function ($message) use ($from, $name, $to, $subject) {
+        Mail::send($view, $data, function ($message) use ($to, $subject) {
             $message->from($from, $name)->to($to)->subject($subject);
         });
     }
