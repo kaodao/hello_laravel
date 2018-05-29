@@ -36,7 +36,10 @@ require __DIR__.'/../vendor/autoload.php';
 */
 
 $app = require_once __DIR__.'/../bootstrap/app.php';
-
+// $db_config = get_db_config();
+// var_dump(get_db_config());
+// $IS_IN_HEROKU= true;
+// dd(get_db_config());
 /*
 |--------------------------------------------------------------------------
 | Run The Application
